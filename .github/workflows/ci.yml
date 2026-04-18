@@ -1,9 +1,16 @@
+on:
+  push:
+    branches:
+      - develop
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: write
+
 jobs:
   pipeline:
     uses: thesamsco/.github/.github/workflows/pipeline.yaml@v1
     with:
-      env: dev          # "dev" ou "prod"
+      env: ${{ github.ref == 'refs/heads/main' && 'prod' || 'dev' }}
       app_name: teste
-    permissions:
-      id-token: write
-      contents: write
