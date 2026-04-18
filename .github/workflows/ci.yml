@@ -14,3 +14,6 @@ jobs:
     with:
       env: ${{ github.ref == 'refs/heads/main' && 'prod' || 'dev' }}
       app_name: teste
+      gcp_wif_provider: ${{ vars.GCP_WIF_PROVIDER_DEV }}
+      gcp_sa: ${{ vars.GCP_SERVICE_ACCOUNT_DEV }}
+    secrets: inherit
