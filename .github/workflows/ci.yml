@@ -1,0 +1,9 @@
+jobs:
+  pipeline:
+    uses: thesamsco/.github/.github/workflows/pipeline.yaml@v1
+    with:
+      env: dev          # "dev" ou "prod"
+      app_name: teste
+    permissions:
+      id-token: write
+      contents: write
