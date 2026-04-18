@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   pipeline:
-    uses: theSamsCo/.github/.github/workflows/pipeline.yaml@v1
+    uses: theSamsCo/central-workflows/.github/workflows/pipeline.yaml@v1
     with:
       env: ${{ github.ref == 'refs/heads/main' && 'prod' || 'dev' }}
       app_name: teste
